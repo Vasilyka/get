@@ -10,18 +10,20 @@ GPIO.setup(10, GPIO.IN)
 num = 0
 def dec2bin(val):
     return [int(el) for el in bin(val)[2:].zfill(8)]
-sleep_time = 0.2
+sleep_time = 0.3
 while True:
     up = GPIO.input(9)
     down = GPIO.input(10)
     if up and down:
-        GPIO.output(leds, 255)
-    if up:
+        num = 255
+        print(num, dec2bin(num))
+        time.sleep(sleep_time)
+    if up == True and down == False:
         if num != 255:
             num = num + 1
             print(num, dec2bin(num))
             time.sleep(sleep_time)
-    if down:
+    if up == False and down == True:
         if num != 0:
             num = num - 1
             print(num, dec2bin(num))
