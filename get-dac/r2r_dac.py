@@ -5,7 +5,7 @@ leds = [16, 20, 21, 25, 26, 17, 27, 22]
 GPIO.setup(leds, GPIO.OUT)
 GPIO.output(leds, 0)
 
-dynamic_range=3.3
+dynamic_range = 3.162
 class R2R_DAC:
     def __init__(self, gpio_bits, dynamic_range, verbose = False):
         self.gpio_bits = gpio_bits
@@ -31,7 +31,7 @@ class R2R_DAC:
     
 if __name__ == "__main__":
     try:
-        dac = R2R_DAC([16,20,21,25,26,17,27,22], 3.183, True)
+        dac = R2R_DAC([16,20,21,25,26,17,27,22], 3.162, True)
         while True:
             try:
                 voltage = float(input("Введите напряжение в Вольтах: "))
