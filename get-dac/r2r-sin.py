@@ -7,7 +7,7 @@ amp = 3.2
 sif = 10
 saf = 1000
 leds = [16, 20, 21, 25, 26, 17, 27, 22]
-dynamic_range = 3.14
+dynamic_range = 3.162
 start = float(time.time())
 
 if __name__ == '__main__':
@@ -18,6 +18,6 @@ if __name__ == '__main__':
                 dac.set_voltage((sg.get_sin_wave_amplitude(sif, 2)/2)*amp)
                 sg.wait_for_sampling_period(saf)
             except ValueError:
-                print('aaaa')
+                print('ну ладно...')
     finally:
         dac.deinit()
