@@ -3,8 +3,8 @@ import signal_generator as sg
 import time
 import RPi.GPIO as GPIO
 
-amp = 3.2
-sif = 10
+amp = 3.162
+sif = 2
 saf = 1000
 leds = [16, 20, 21, 25, 26, 17, 27, 22]
 dynamic_range = 3.162

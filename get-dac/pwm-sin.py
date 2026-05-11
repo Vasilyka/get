@@ -4,7 +4,7 @@ import time
 import RPi.GPIO as GPIO
 
 amp = 3.2
-sif = 10
+sif = 2
 saf = 1000
 start = float(time.time())
 
