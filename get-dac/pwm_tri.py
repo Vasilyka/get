@@ -31,6 +31,15 @@ class Triag:
 
 if __name__ == '__main__':
     try:
-        dac = Triag(F=500, f=50)
+        print(f"Треугольник {FREQ} Гц, амплитуда {AMP} В")
+        while True:
+            tri_val = get_triangle()
+            voltage = tri_val * AMP
+            set_voltage_pwm(voltage)
+            # Для отладки (раскомментируйте):
+            # print(f"{tri_val:.3f} -> {voltage:.2f} В")
+            wait_for_sampling()
+    except KeyboardInterrupt:
+        print("\nСтоп")
     finally:
-        dac.deinit()"""
+        dac.deinit()
