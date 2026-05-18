@@ -1,8 +1,7 @@
-import r2r_dac as r2r
-import signal_generator as sg
 import time
 import RPi.GPIO as GPIO
 import smbus
+
 amp = 3.2
 sif = 10
 saf = 1000
@@ -31,15 +30,6 @@ class Triag:
 
 if __name__ == '__main__':
     try:
-        print(f"Треугольник {FREQ} Гц, амплитуда {AMP} В")
-        while True:
-            tri_val = get_triangle()
-            voltage = tri_val * AMP
-            set_voltage_pwm(voltage)
-            # Для отладки (раскомментируйте):
-            # print(f"{tri_val:.3f} -> {voltage:.2f} В")
-            wait_for_sampling()
-    except KeyboardInterrupt:
-        print("\nСтоп")
+        dac = Triag(F=500, f=50)
     finally:
         dac.deinit()
