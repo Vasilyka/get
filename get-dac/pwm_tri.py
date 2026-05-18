@@ -44,8 +44,8 @@ if __name__ == '__main__':
             tri_val = get_triangle()
             voltage = tri_val * AMP
             set_voltage_pwm(voltage)
-            # Для отладки (раскомментируйте):
-            # print(f"{tri_val:.3f} -> {voltage:.2f} В")
+            #Для отладки (раскомментируйте):
+            print(f"{tri_val:.3f} -> {voltage:.2f} В")
             wait_for_sampling()
     except KeyboardInterrupt:
         print("\nСтоп")
